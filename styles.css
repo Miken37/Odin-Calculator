@@ -56,7 +56,7 @@ p{
 }
 
 .buttons-num{
-    font-size: 20px;
+    font-size: 35px;
     background-color: slategrey;
     color: white;
     font-weight: bold;
@@ -77,4 +77,8 @@ p{
 .back{
     color:red;
     background-color: azure;
+}
+
+.equal{
+    background-color: greenyellow;
 }
