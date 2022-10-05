@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(139, 187, 139);
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    font-size: 24px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: flex-end;
+    margin: 5px;
+    margin-bottom: 1px;
+}
+.calculator-container{
+    display: flex;
+    flex-direction: column;
+    border: 5px black solid;
+    border-radius: 5px;
+    min-width: 25px;
+    max-width: 300px;
+    background-color: rgb(129, 113, 233);
+    
+}
+.buttons-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.screen{
+    width: 280px;
+    height: 25px;
+    border: 2px black solid;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkgrey;
+    align-self: flex-end;
+    text-align: end;
+    padding-right: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.buttons{
+    font-size: 20px;
+    background-color: azure;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    border: solid black 2px;
+    text-align: center;
+    margin: 5px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttons-num{
+    font-size: 20px;
+    background-color: slategrey;
+    color: white;
+    font-weight: bold;
+    min-width: 75px;
+    max-width: 75px;
+    min-height: 75px;
+    max-height: 75px;
+    border: solid black 2px;
+    text-align: center;
+    margin: 5px;
+}
+
+.clear{
+    color: red;
+    background-color: azure;
+}
+
+.back{
+    color:red;
+    background-color: azure;
+}
