@@ -29,7 +29,13 @@ function operate(operation, num1, num2){
     }
 }
 
+function inputtedNumber(value){
+    screenDisplay.innerHTML = value;
+}
+
 let screenDisplay = document.querySelector(".screen");
 let numButOne = document.querySelector(".numOne");
-numButOne.addEventListener("click", () => console.log("worked"));
+numButOne.addEventListener("click", () => {inputtedNumber(1)});
+
+
 
