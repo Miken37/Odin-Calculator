@@ -1,7 +1,7 @@
 body{
-    background-color: rgb(139, 187, 139);
     display: flex;
     justify-content: center;
+    background-color: lightblue;
 }
 
 p{
@@ -10,7 +10,7 @@ p{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     align-self: flex-end;
     margin: 5px;
-    margin-bottom: 1px;
+    margin-bottom: 20px;
 }
 .calculator-container{
     display: flex;
@@ -19,7 +19,10 @@ p{
     border-radius: 5px;
     min-width: 25px;
     max-width: 300px;
-    background-color: rgb(129, 113, 233);
+    background-color: rgb(255, 255, 255);
+    /*background-image: url(afro2.png);*/
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 .buttons-grid{
@@ -55,6 +58,15 @@ p{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.buttons:hover{
+    background-color: black;
+    color: white;
+}
+
+.buttons:active{
+    transform: translateY(4px);
+}
+
 .buttons-num{
     font-size: 35px;
     background-color: slategrey;
@@ -67,6 +79,16 @@ p{
     border: solid black 2px;
     text-align: center;
     margin: 5px;
+}
+
+.buttons-num:hover{
+    background-color: white;
+    color: black;
+}
+
+.buttons-num:active{
+    transform: translateY(4px);
+    background-color: slategrey;
 }
 
 .clear{
