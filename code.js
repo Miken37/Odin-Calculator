@@ -1,17 +1,29 @@
-function add(num1, num2){
-    screenDisplay.innerHTML = num1+num2;
+function add(num_1, num_2){
+    let resultNum = num_1+num_2;
+    screenDisplay.innerHTML = resultNum;
+    num2 = resultNum;
+    console.log(resultNum);
 }
 
-function subtract(num1, num2){
-    screenDisplay.innerHTML = num1-num2;
+function subtract(num_1, num_2){
+    let resultNum = num_1-num_2;
+    screenDisplay.innerHTML = resultNum;
+    num2 = resultNum;
+    console.log(resultNum);
 }
 
-function multiply(num1, num2){
-    screenDisplay.innerHTML = num1*num2;
+function multiply(num_1, num_2){
+    let resultNum = num_1*num_2;
+    screenDisplay.innerHTML = resultNum;
+    num2 = resultNum;
+    console.log(resultNum);
 }
 
-function divide(num1, num2){
-    screenDisplay.innerHTML = num1/num2;
+function divide(num_1, num_2){
+    let resultNum = num_1/num_2;
+    screenDisplay.innerHTML = resultNum;
+    num2 = resultNum;
+    console.log(resultNum);
 }
 
 function operate(operation, num1, num2){
@@ -30,6 +42,7 @@ function operate(operation, num1, num2){
 }
 
 function equalOperate(finalOp, num1, num2){
+    stringCount = 0;
     num1 = num2;
     num2 = +screenDisplay.innerHTML;
     operate(finalOp, num1, num2);
@@ -40,8 +53,10 @@ function selectedOperator(selectedOp){
     let value = +screenDisplay.innerHTML;
     num1 = num2;
     num2 = value;
-    console.log(`num1: ${num1}, num2: ${num2}`)
-    operate(operation, num1, num2);
+    if (stringCount >= 1){
+        operate(operation, num1, num2);
+    }
+    stringCount++;
     newValue = true;
 }
 
@@ -65,7 +80,8 @@ function clear(){
     num2=0;
     operation="null";
     screenNums = [];
-}
+    stringCount = 0;
+} //If stringing, need to store result into num1
 
 function randomImg(){
     let numOfPics = 2;
@@ -97,7 +113,8 @@ let diviBtn = document.querySelector(".divi");
 let clearBtn = document.querySelector(".clear");
 
 //Global variables for calculations
-let stringing = false;
+let stringCount = 0;
+let isStringing = false;
 let newValue = false;
 let num1 = 0;
 let num2 = 0;
@@ -130,4 +147,4 @@ operateBtn.addEventListener("click", () => {equalOperate(operation, num1, num2)}
 randomImg();
 
 let testBtn = document.querySelector(".tests");
-testBtn.addEventListener("click", () => {console.log(`Num1 = ${num1}, Num2 = ${num2}`)});
+testBtn.addEventListener("click", () => {console.log(`Num1 = ${num1}, Num2 = ${num2} StringCount = ${stringCount}`)});
