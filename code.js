@@ -70,23 +70,26 @@ function selectedOperator(selectedOp){
 
 function inputtedNumber(value){
     if (newValue == true){
+        console.log(screenNums);
         screenNums = [];
         screenNums.push(value);
         screenDisplay.innerHTML = screenNums.join("");
         newValue = false;
 
     } else{
+    console.log(screenNums);
     screenNums.push(value);
     screenDisplay.innerHTML = screenNums.join("");
     }
 }
 
-function inputDecimal(){
-    console.log(screenDisplay.innerHTML);
-    if (+screenDisplay.innerHTML%1 == 0){
-            inputtedNumber(".");
+function inputDecimal(){        //Flawed check, if number is 50. or 50.0 it allows another decimal.
+    for (let i = 0; i <= screenDisplay.innerHTML; i++){
+        if (screenDisplay.innerHTML[i] === "."){
             return;
-    }
+        }}
+        
+    inputtedNumber(".");
     return;
         
 }
