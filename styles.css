@@ -102,5 +102,7 @@ p{
 }
 
 .equal{
-    background-color: greenyellow;
+    background-color: rgb(92, 47, 255);
+    min-width: 243px;
+    margin-bottom: 10px;
 }
