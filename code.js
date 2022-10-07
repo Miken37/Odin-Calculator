@@ -83,12 +83,12 @@ function inputtedNumber(value){
     }
 }
 
-function inputDecimal(){        //Flawed check, if number is 50. or 50.0 it allows another decimal.
+function inputDecimal(){        
     for (let i = 0; i <= screenDisplay.innerHTML; i++){
         if (screenDisplay.innerHTML[i] === "."){
             return;
         }}
-        
+
     inputtedNumber(".");
     return;
         
