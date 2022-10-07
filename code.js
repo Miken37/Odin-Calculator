@@ -49,19 +49,22 @@ function equalOperate(finalOp, num1, num2){
 }
 
 function selectedOperator(selectedOp){
-    operation = selectedOp;
+    if (operation == "null"){
+        operation = selectedOp;
+    }
     let value = +screenDisplay.innerHTML;
     num1 = num2;
     num2 = value;
     if (stringCount >= 1){
+        console.log(`${num1}${operation}${num2}`)
         operate(operation, num1, num2);
     }
     stringCount++;
     newValue = true;
+    operation = selectedOp;
 }
 
 function inputtedNumber(value){
-    console.log(operation);
     if (newValue == true){
         screenNums = [];
         screenNums.push(value);
@@ -111,10 +114,10 @@ let multBtn = document.querySelector(".mult");
 let diviBtn = document.querySelector(".divi");
 
 let clearBtn = document.querySelector(".clear");
+let decBtn = document.querySelector(".decimal");
 
 //Global variables for calculations
 let stringCount = 0;
-let isStringing = false;
 let newValue = false;
 let num1 = 0;
 let num2 = 0;
