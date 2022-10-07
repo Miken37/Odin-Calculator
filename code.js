@@ -20,10 +20,14 @@ function multiply(num_1, num_2){
 }
 
 function divide(num_1, num_2){
-    let resultNum = num_1/num_2;
-    screenDisplay.innerHTML = resultNum;
-    num2 = resultNum;
-    console.log(resultNum);
+    if (num_2 == 0){
+        screenDisplay.innerHTML = "LMAO NAH B";
+    } else {
+        let resultNum = num_1/num_2;
+        screenDisplay.innerHTML = resultNum;
+        num2 = resultNum;
+        console.log(resultNum);
+    }
 }
 
 function operate(operation, num1, num2){
@@ -77,6 +81,26 @@ function inputtedNumber(value){
     }
 }
 
+function inputDecimal(){
+    console.log(screenDisplay.innerHTML);
+    if (+screenDisplay.innerHTML%1 == 0){
+            inputtedNumber(".");
+            return;
+    }
+    return;
+        
+}
+
+function delLast(){
+    let tempArray = [];
+    stringCount++;
+    for (let i=0; i<screenDisplay.innerHTML.length-1; i++){
+        tempArray.push(screenDisplay.innerHTML[i]);
+
+    }
+    screenDisplay.innerHTML = tempArray.join("");
+}
+
 function clear(){
     screenDisplay.innerHTML = 0;
     num1=0;
@@ -113,6 +137,7 @@ let minusBtn = document.querySelector(".minus");
 let multBtn = document.querySelector(".mult");
 let diviBtn = document.querySelector(".divi");
 
+let backBtn = document.querySelector(".back");
 let clearBtn = document.querySelector(".clear");
 let decBtn = document.querySelector(".decimal");
 
@@ -137,7 +162,9 @@ numButEight.addEventListener("click", () => {inputtedNumber(8)});
 numButNine.addEventListener("click", () => {inputtedNumber(9)});
 numButZero.addEventListener("click", () => {inputtedNumber(0)});
 
+decBtn.addEventListener("click", () => {inputDecimal()});
 clearBtn.addEventListener("click", () => {clear()})
+backBtn.addEventListener("click", () => {delLast()})
 
 plusBtn.addEventListener("click", () => {selectedOperator("+")});
 minusBtn.addEventListener("click", () => {selectedOperator("-")});
@@ -149,5 +176,6 @@ operateBtn.addEventListener("click", () => {equalOperate(operation, num1, num2)}
 
 randomImg();
 
-let testBtn = document.querySelector(".tests");
-testBtn.addEventListener("click", () => {console.log(`Num1 = ${num1}, Num2 = ${num2} StringCount = ${stringCount}`)});
+//For testing
+// let testBtn = document.querySelector(".tests");
+// testBtn.addEventListener("click", () => {console.log(`${screenDisplay.innerHTML}`)});
